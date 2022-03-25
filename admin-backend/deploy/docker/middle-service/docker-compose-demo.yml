@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  hello-world:
+    image: registry.cn-hangzhou.aliyuncs.com/mt23/jre8-alpine-shanghai:1.0.0
+    environment:
+      - TZ=Asia/Shanghai
+    command: ["/bin/sh" ,"-c", "while true; do echo hello world; sleep 1; done"]
