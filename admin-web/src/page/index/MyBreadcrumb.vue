@@ -1,5 +1,5 @@
 <template>
-    <div class="margin-bottom-sm">
+    <div class="margin-bottom-sm margin-top-sm margin-left-sm">
         <el-breadcrumb separator="/" separator-class="el-icon-arrow-right">
             <el-breadcrumb-item v-for="item in menuList" :key="item.path">
                 {{item.name}}

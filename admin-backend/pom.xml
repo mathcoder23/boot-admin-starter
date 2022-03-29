@@ -24,6 +24,7 @@
         <module>application-basic/cache-basic</module>
         <module>application-service</module>
         <module>rest-api</module>
+        <module>application-basic/swagger2js</module>
 
     </modules>
     <dependencies>

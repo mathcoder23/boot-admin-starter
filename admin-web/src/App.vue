@@ -1,20 +1,22 @@
 <template>
     <div id="app">
         <router-view/>
-        <vue-websocket/>
     </div>
 </template>
 
 <script>
-    import VueWebsocket from "./components/notify/VueWebsocket";
+    // import VueWebsocket from "./components/notify/VueWebsocket";
+
+    import {EventBusHandler} from "./event/event_bus_handler";
 
     export default {
         name: "app",
-        components: {VueWebsocket},
+        components: {},
         data() {
             return {};
         },
         mounted() {
+            EventBusHandler.onPage(this)
             // this.$store.dispatch("GetEnumFormatValue")
         },
         created() {

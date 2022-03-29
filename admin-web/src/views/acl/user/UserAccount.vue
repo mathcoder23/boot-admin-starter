@@ -16,6 +16,8 @@
 </template>
 
 <script>
+    import {mapGetters} from "vuex";
+
     export default {
         name: "UserAccount",
         components: {},
@@ -60,13 +62,13 @@
                             label: '是否启用',
                             prop: 'enable',
                             type: 'select',
-                            dicData: this.$store.state.constants.dictList['local_Enable']
+                            dicData: []
                         },
                         {
                             label: '用户类型',
                             prop: 'type',
                             type: 'select',
-                            dicData: this.$store.state.constants.dictList['Account_Type']
+                            dicData: []
                         },
                         {
                             label: '角色',
@@ -85,6 +87,9 @@
                     ]
                 }
             }
+        },
+        computed: {
+            ...mapGetters(["dictList"])
         },
         mounted() {
             console.log('a', this.$api)
@@ -105,6 +110,10 @@
                 for (let col of this.option.column) {
                     if (col.prop === "roleId") {
                         col.dicData = this.roleList
+                    } else if (col.prop === "enable") {
+                        col.dicData = this.dictList['local_Enable']
+                    } else if (col.prop === "type") {
+                        col.dicData = this.dictList['Account_Type']
                     }
                 }
                 this.$refs.form.init()

@@ -21,10 +21,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/constant")
 public class DictController {
-    @PostMapping("dict")
+    @GetMapping("dict")
     public RestObjectResponse<Map<String, List<DictData>>> getDict() {
         Map<String,List<DictData>> result = new HashMap<>(64);
-        ClassUtil.scanPackageBySuper("com.eface.platform", BaseEnum.class).forEach(r -> {
+        ClassUtil.scanPackageBySuper("com.pettyfox", BaseEnum.class).forEach(r -> {
             List<DictData> dictDataList = new ArrayList<>();
 
             String name = r.getName().substring(r.getName().lastIndexOf(".")+1).replace("$","_");

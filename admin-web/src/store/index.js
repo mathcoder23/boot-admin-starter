@@ -6,19 +6,19 @@ import tags from './modules/tags'
 import logs from './modules/logs'
 import getters from './getters'
 import notify from "./modules/notify";
-import constants from "./modules/constants";
+import {commonConfig} from "./modules/common_config";
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
-  modules: {
-    user,
-    common,
-    logs,
-    tags,
-    notify,
-    constants
-  },
-  getters
+    modules: {
+        user,
+        common,
+        logs,
+        tags,
+        notify,
+        commonConfig
+    },
+    getters
 })
 
 export default store

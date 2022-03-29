@@ -1,82 +1,11 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-18 10:00:51
+*  date:  2022-03-29 21:25:09
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
 const apiPrefix = '/api/account/role-permission'
-/**
-* function:
-*  list
-* params:
-	*[
-	*	{
-	*		"default":1,
-	*		"in":"query",
-	*		"name":"pageNo",
-	*		"format":"int32",
-	*		"description":"pageNo",
-	*		"type":"integer",
-	*		"required":false
-	*	},
-	*	{
-	*		"default":15,
-	*		"in":"query",
-	*		"name":"pageSize",
-	*		"format":"int32",
-	*		"description":"pageSize",
-	*		"type":"integer",
-	*		"required":false
-	*	}
-	*]
-
-* body:
-
-* response:
-	*{
-	*	"type":"object",
-	*	"title":"RestObjectResponse«RolePermissionBizImpl»",
-	*	"properties":{
-	*		"msg":{
-	*			"type":"string"
-	*		},
-	*		"code":{
-	*			"format":"int32",
-	*			"type":"integer"
-	*		},
-	*		"data":{
-	*			"ref":"#/definitions/RolePermissionBizImpl",
-	*			"value":{
-	*				"type":"object",
-	*				"title":"RolePermissionBizImpl",
-	*				"properties":{
-	*					"baseMapper":{
-	*						"ref":"#/definitions/BaseMapper«RolePermission对象»"
-	*					}
-	*				}
-	*			}
-	*		},
-	*		"errmsg":{
-	*			"type":"string"
-	*		},
-	*		"bcode":{
-	*			"format":"int32",
-	*			"type":"integer"
-	*		}
-	*	}
-	*}
-
-*
-*/
-const list = (params) => {
-    return PFApi.apiRequest(
-    {
-        url: apiPrefix + '/list',
-        method: 'GET',
-        params: params
-    })
-}
 /**
 * function:
 *  list2
@@ -106,17 +35,20 @@ const list = (params) => {
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«PageInfo«RolePermission对象»»",
+	*	"title":"通用响应体«PageInfo«RolePermission对象»»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
 	*			"ref":"#/definitions/PageInfo«RolePermission对象»",
+	*			"description":"数据体",
 	*			"value":{
 	*				"type":"object",
 	*				"title":"PageInfo«RolePermission对象»",
@@ -198,6 +130,7 @@ const list = (params) => {
 	*			}
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -215,6 +148,76 @@ const list2 = (body, params) => {
         url: apiPrefix + '/list2',
         method: 'POST',
         data: body,
+        params: params
+    })
+}
+/**
+* function:
+*  list
+* params:
+	*[
+	*	{
+	*		"default":1,
+	*		"in":"query",
+	*		"name":"pageNo",
+	*		"format":"int32",
+	*		"description":"pageNo",
+	*		"type":"integer",
+	*		"required":false
+	*	},
+	*	{
+	*		"default":15,
+	*		"in":"query",
+	*		"name":"pageSize",
+	*		"format":"int32",
+	*		"description":"pageSize",
+	*		"type":"integer",
+	*		"required":false
+	*	}
+	*]
+
+* body:
+
+* response:
+	*{
+	*	"type":"object",
+	*	"title":"通用响应体«RolePermissionBizImpl»",
+	*	"properties":{
+	*		"msg":{
+	*			"description":"正常消息",
+	*			"type":"string"
+	*		},
+	*		"code":{
+	*			"format":"int32",
+	*			"description":"公共响应码",
+	*			"type":"integer"
+	*		},
+	*		"data":{
+	*			"ref":"#/definitions/RolePermissionBizImpl",
+	*			"description":"数据体",
+	*			"value":{
+	*				"type":"object",
+	*				"title":"RolePermissionBizImpl"
+	*			}
+	*		},
+	*		"errmsg":{
+	*			"description":"错误消息",
+	*			"type":"string"
+	*		},
+	*		"bcode":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		}
+	*	}
+	*}
+
+*
+*/
+const list = (params) => {
+    return PFApi.apiRequest(
+    {
+        url: apiPrefix + '/list',
+        method: 'GET',
         params: params
     })
 }
@@ -246,19 +249,23 @@ const list2 = (body, params) => {
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«string»",
+	*	"title":"通用响应体«string»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
+	*			"description":"数据体",
 	*			"type":"string"
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -319,17 +326,20 @@ const savePermission = (body, params) => {
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«RolePermission对象»",
+	*	"title":"通用响应体«RolePermission对象»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
 	*			"ref":"#/definitions/RolePermission对象",
+	*			"description":"数据体",
 	*			"value":{
 	*				"type":"object",
 	*				"title":"RolePermission对象",
@@ -361,6 +371,7 @@ const savePermission = (body, params) => {
 	*			}
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -404,19 +415,23 @@ const save = (body, params) => {
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«string»",
+	*	"title":"通用响应体«string»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
+	*			"description":"数据体",
 	*			"type":"string"
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -441,11 +456,11 @@ export const RolePermissionApi = {
     /**
      *
      */
-    list: list,
+    list2: list2,
     /**
      *
      */
-    list2: list2,
+    list: list,
     /**
      *
      */

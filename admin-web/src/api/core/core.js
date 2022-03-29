@@ -77,7 +77,7 @@ let init = (url, ax) => {
         NProgress.start() // start progress bar
         const meta = (config.meta || {});
         let auth = PFAuth.checkUrlAuth(config)
-        if (true === auth) {
+        if (true === auth && (!config.params || !config.params.pfPublic)) {
             let token = PFAuth.getToken(config)
             if (null === token) {
                 //login

@@ -1,11 +1,96 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-18 10:00:51
+*  date:  2022-03-29 21:25:09
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
 const apiPrefix = '/api/sys/account'
+/**
+* function:
+*  restPassword
+* params:
+	*[]
+
+* body:
+	*{
+	*	"type":"object",
+	*	"title":"EditAccountDTO",
+	*	"properties":{
+	*		"nick":{
+	*			"type":"string"
+	*		},
+	*		"password":{
+	*			"type":"string"
+	*		},
+	*		"enable":{
+	*			"type":"boolean"
+	*		},
+	*		"roleId":{
+	*			"format":"int64",
+	*			"type":"integer"
+	*		},
+	*		"departmentId":{
+	*			"format":"int64",
+	*			"type":"integer"
+	*		},
+	*		"id":{
+	*			"format":"int64",
+	*			"type":"integer"
+	*		},
+	*		"type":{
+	*			"type":"string",
+	*			"enum":[
+	*				"SUPER_ADMIN",
+	*				"USER"
+	*			]
+	*		},
+	*		"username":{
+	*			"type":"string"
+	*		}
+	*	}
+	*}
+
+* response:
+	*{
+	*	"type":"object",
+	*	"title":"通用响应体«string»",
+	*	"properties":{
+	*		"msg":{
+	*			"description":"正常消息",
+	*			"type":"string"
+	*		},
+	*		"code":{
+	*			"format":"int32",
+	*			"description":"公共响应码",
+	*			"type":"integer"
+	*		},
+	*		"data":{
+	*			"description":"数据体",
+	*			"type":"string"
+	*		},
+	*		"errmsg":{
+	*			"description":"错误消息",
+	*			"type":"string"
+	*		},
+	*		"bcode":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		}
+	*	}
+	*}
+
+*
+*/
+const restPassword = (body, params) => {
+    return PFApi.apiRequest(
+    {
+        url: apiPrefix + '/restPassword',
+        method: 'POST',
+        data: body,
+        params: params
+    })
+}
 /**
 * function:
 *  getPermissionTree
@@ -17,22 +102,26 @@ const apiPrefix = '/api/sys/account'
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«List«PermissionTreeData»»",
+	*	"title":"通用响应体«List«PermissionTreeData»»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
+	*			"description":"数据体",
 	*			"type":"array",
 	*			"items":{
 	*				"ref":"#/definitions/PermissionTreeData"
 	*			}
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -77,9 +166,20 @@ const getPermissionTree = (body, params) => {
 	*			"format":"int64",
 	*			"type":"integer"
 	*		},
+	*		"departmentId":{
+	*			"format":"int64",
+	*			"type":"integer"
+	*		},
 	*		"id":{
 	*			"format":"int64",
 	*			"type":"integer"
+	*		},
+	*		"type":{
+	*			"type":"string",
+	*			"enum":[
+	*				"SUPER_ADMIN",
+	*				"USER"
+	*			]
 	*		},
 	*		"username":{
 	*			"type":"string"
@@ -90,19 +190,23 @@ const getPermissionTree = (body, params) => {
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«string»",
+	*	"title":"通用响应体«string»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
+	*			"description":"数据体",
 	*			"type":"string"
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -132,7 +236,7 @@ const save = (body, params) => {
 * body:
 	*{
 	*	"type":"object",
-	*	"title":"BasePageParam",
+	*	"title":"AccountParam",
 	*	"properties":{
 	*		"pageNo":{
 	*			"format":"int32",
@@ -141,6 +245,16 @@ const save = (body, params) => {
 	*		"pageSize":{
 	*			"format":"int32",
 	*			"type":"integer"
+	*		},
+	*		"anyText":{
+	*			"type":"string"
+	*		},
+	*		"type":{
+	*			"type":"string",
+	*			"enum":[
+	*				"SUPER_ADMIN",
+	*				"USER"
+	*			]
 	*		}
 	*	}
 	*}
@@ -148,17 +262,20 @@ const save = (body, params) => {
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«PageInfo«账户信息»»",
+	*	"title":"通用响应体«PageInfo«账户信息»»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
 	*			"ref":"#/definitions/PageInfo«账户信息»",
+	*			"description":"数据体",
 	*			"value":{
 	*				"type":"object",
 	*				"title":"PageInfo«账户信息»",
@@ -240,6 +357,7 @@ const save = (body, params) => {
 	*			}
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -260,7 +378,71 @@ const list = (body, params) => {
         params: params
     })
 }
+/**
+* function:
+*  modifyPassword
+* params:
+	*[]
+
+* body:
+	*{
+	*	"type":"object",
+	*	"title":"ModifyPwdDTO",
+	*	"properties":{
+	*		"newPwd":{
+	*			"type":"string"
+	*		},
+	*		"pwd":{
+	*			"type":"string"
+	*		}
+	*	}
+	*}
+
+* response:
+	*{
+	*	"type":"object",
+	*	"title":"通用响应体«string»",
+	*	"properties":{
+	*		"msg":{
+	*			"description":"正常消息",
+	*			"type":"string"
+	*		},
+	*		"code":{
+	*			"format":"int32",
+	*			"description":"公共响应码",
+	*			"type":"integer"
+	*		},
+	*		"data":{
+	*			"description":"数据体",
+	*			"type":"string"
+	*		},
+	*		"errmsg":{
+	*			"description":"错误消息",
+	*			"type":"string"
+	*		},
+	*		"bcode":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		}
+	*	}
+	*}
+
+*
+*/
+const modifyPassword = (body, params) => {
+    return PFApi.apiRequest(
+    {
+        url: apiPrefix + '/modifyPassword',
+        method: 'POST',
+        data: body,
+        params: params
+    })
+}
 export const AccountApi = {
+    /**
+     *
+     */
+    restPassword: restPassword,
     /**
      *
      */
@@ -272,5 +454,9 @@ export const AccountApi = {
     /**
      *
      */
-    list: list
+    list: list,
+    /**
+     *
+     */
+    modifyPassword: modifyPassword
 }

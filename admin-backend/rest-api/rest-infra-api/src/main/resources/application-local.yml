@@ -1,7 +1,7 @@
-MYSQL_URL: s8.pettyfox.com:11040
+MYSQL_URL: s8.pettyfox.com:14001
 MYSQL_USERNAME: root
-MYSQL_PASSWORD: Mysql...111
+MYSQL_PASSWORD: Root#123
 MYSQL_DB: admin_db
-REDIS_HOST: localhost
-REDIS_PORT: 6379
+REDIS_HOST: s8.pettyfox.com
+REDIS_PORT: 14002
 REDIS_PWD:

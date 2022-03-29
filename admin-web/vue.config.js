@@ -4,7 +4,7 @@ let baseUrl = './'
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = {
     devServer:{
-        port:7777
+        port:7878
     },
     publicPath: baseUrl, // 根据你的实际情况更改这里
     lintOnSave: true,

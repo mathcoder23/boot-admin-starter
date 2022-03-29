@@ -5,19 +5,33 @@
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
-const apiPrefix = '/api/message/websocket'
+const apiPrefix = '/api/sys/department'
 /**
 * function:
-*  getConfig
+*  list
 * params:
 	*[]
 
 * body:
+	*{
+	*	"type":"object",
+	*	"title":"BasePageParam",
+	*	"properties":{
+	*		"pageNo":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		},
+	*		"pageSize":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		}
+	*	}
+	*}
 
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"通用响应体«消息连接配置»",
+	*	"title":"通用响应体«PageInfo«DepartmentVO»»",
 	*	"properties":{
 	*		"msg":{
 	*			"description":"正常消息",
@@ -29,26 +43,84 @@ const apiPrefix = '/api/message/websocket'
 	*			"type":"integer"
 	*		},
 	*		"data":{
-	*			"ref":"#/definitions/消息连接配置",
+	*			"ref":"#/definitions/PageInfo«DepartmentVO»",
 	*			"description":"数据体",
 	*			"value":{
 	*				"type":"object",
-	*				"title":"消息连接配置",
+	*				"title":"PageInfo«DepartmentVO»",
 	*				"properties":{
-	*					"proto":{
-	*						"type":"string"
+	*					"navigatepageNums":{
+	*						"type":"array",
+	*						"items":{
+	*							"format":"int32",
+	*							"type":"integer"
+	*						}
 	*					},
-	*					"serverIp":{
-	*						"type":"string"
+	*					"startRow":{
+	*						"format":"int32",
+	*						"type":"integer"
 	*					},
-	*					"serverPort":{
-	*						"type":"string"
+	*					"hasNextPage":{
+	*						"type":"boolean"
 	*					},
-	*					"uri":{
-	*						"type":"string"
+	*					"prePage":{
+	*						"format":"int32",
+	*						"type":"integer"
 	*					},
-	*					"token":{
-	*						"type":"string"
+	*					"nextPage":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"endRow":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"pageSize":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"list":{
+	*						"type":"array",
+	*						"items":{
+	*							"ref":"#/definitions/DepartmentVO"
+	*						}
+	*					},
+	*					"pageNum":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"navigatePages":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"navigateFirstPage":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"total":{
+	*						"format":"int64",
+	*						"type":"integer"
+	*					},
+	*					"pages":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"size":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"isLastPage":{
+	*						"type":"boolean"
+	*					},
+	*					"hasPreviousPage":{
+	*						"type":"boolean"
+	*					},
+	*					"navigateLastPage":{
+	*						"format":"int32",
+	*						"type":"integer"
+	*					},
+	*					"isFirstPage":{
+	*						"type":"boolean"
 	*					}
 	*				}
 	*			}
@@ -66,10 +138,10 @@ const apiPrefix = '/api/message/websocket'
 
 *
 */
-const getConfig = (body, params) => {
+const list = (body, params) => {
     return PFApi.apiRequest(
     {
-        url: apiPrefix + '/getConfig',
+        url: apiPrefix + '/list',
         method: 'POST',
         data: body,
         params: params
@@ -77,23 +149,21 @@ const getConfig = (body, params) => {
 }
 /**
 * function:
-*  unsubscribeMessage
+*  remove
 * params:
 	*[]
 
 * body:
 	*{
 	*	"type":"object",
-	*	"title":"SubscribeParamDTO",
+	*	"title":"BaseIdsParams",
 	*	"properties":{
-	*		"channelValue":{
-	*			"type":"string"
-	*		},
-	*		"channelId":{
-	*			"type":"string"
-	*		},
-	*		"token":{
-	*			"type":"string"
+	*		"ids":{
+	*			"type":"array",
+	*			"items":{
+	*				"format":"int64",
+	*				"type":"integer"
+	*			}
 	*		}
 	*	}
 	*}
@@ -129,10 +199,10 @@ const getConfig = (body, params) => {
 
 *
 */
-const unsubscribeMessage = (body, params) => {
+const remove = (body, params) => {
     return PFApi.apiRequest(
     {
-        url: apiPrefix + '/unsubscribeMessage',
+        url: apiPrefix + '/delete',
         method: 'POST',
         data: body,
         params: params
@@ -140,23 +210,30 @@ const unsubscribeMessage = (body, params) => {
 }
 /**
 * function:
-*  subscribeMessage
+*  save
 * params:
 	*[]
 
 * body:
 	*{
 	*	"type":"object",
-	*	"title":"SubscribeParamDTO",
+	*	"title":"DepartmentEdit",
 	*	"properties":{
-	*		"channelValue":{
+	*		"adminName":{
 	*			"type":"string"
 	*		},
-	*		"channelId":{
+	*		"address":{
 	*			"type":"string"
 	*		},
-	*		"token":{
+	*		"adminPhone":{
 	*			"type":"string"
+	*		},
+	*		"name":{
+	*			"type":"string"
+	*		},
+	*		"id":{
+	*			"format":"int64",
+	*			"type":"integer"
 	*		}
 	*	}
 	*}
@@ -192,26 +269,26 @@ const unsubscribeMessage = (body, params) => {
 
 *
 */
-const subscribeMessage = (body, params) => {
+const save = (body, params) => {
     return PFApi.apiRequest(
     {
-        url: apiPrefix + '/subscribeMessage',
+        url: apiPrefix + '/save',
         method: 'POST',
         data: body,
         params: params
     })
 }
-export const WebsocketApi = {
+export const DepartmentApi = {
     /**
      *
      */
-    getConfig: getConfig,
+    list: list,
     /**
      *
      */
-    unsubscribeMessage: unsubscribeMessage,
+    remove: remove,
     /**
      *
      */
-    subscribeMessage: subscribeMessage
+    save: save
 }

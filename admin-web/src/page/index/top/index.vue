@@ -51,20 +51,20 @@
           <top-theme></top-theme>
         </div>
       </el-tooltip>
-      <el-tooltip effect="dark"
-                  :content="$t('navbar.notice')"
-                  placement="bottom">
-        <div class="top-bar__item top-bar__item--show">
-          <top-notice></top-notice>
-        </div>
-      </el-tooltip>
-      <el-tooltip effect="dark"
-                  :content="$t('navbar.language')"
-                  placement="bottom">
-        <div class="top-bar__item top-bar__item--show">
-          <top-lang></top-lang>
-        </div>
-      </el-tooltip>
+      <!--<el-tooltip effect="dark"-->
+                  <!--:content="$t('navbar.notice')"-->
+                  <!--placement="bottom">-->
+        <!--<div class="top-bar__item top-bar__item&#45;&#45;show">-->
+          <!--<top-notice></top-notice>-->
+        <!--</div>-->
+      <!--</el-tooltip>-->
+      <!--<el-tooltip effect="dark"-->
+                  <!--:content="$t('navbar.language')"-->
+                  <!--placement="bottom">-->
+        <!--<div class="top-bar__item top-bar__item&#45;&#45;show">-->
+          <!--<top-lang></top-lang>-->
+        <!--</div>-->
+      <!--</el-tooltip>-->
       <el-tooltip v-if="showFullScren"
                   effect="dark"
                   :content="isFullScren?$t('navbar.screenfullF'):$t('navbar.screenfull')"
@@ -86,11 +86,14 @@
             <router-link to="/">{{$t('navbar.dashboard')}}</router-link>
           </el-dropdown-item>
           <el-dropdown-item>
-            <router-link to="/info/index">{{$t('navbar.userinfo')}}</router-link>
+            修改密码
           </el-dropdown-item>
-          <el-dropdown-item>
-            <router-link to="/info/setting">{{$t('navbar.setting')}}</router-link>
-          </el-dropdown-item>
+          <!--<el-dropdown-item>-->
+            <!--<router-link to="/info/index">{{$t('navbar.userinfo')}}</router-link>-->
+          <!--</el-dropdown-item>-->
+          <!--<el-dropdown-item>-->
+            <!--<router-link to="/info/setting">{{$t('navbar.setting')}}</router-link>-->
+          <!--</el-dropdown-item>-->
           <el-dropdown-item @click.native="logout"
                             divided>{{$t('navbar.logOut')}}</el-dropdown-item>
         </el-dropdown-menu>

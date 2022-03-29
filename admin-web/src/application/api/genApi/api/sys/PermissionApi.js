@@ -1,7 +1,7 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-18 10:00:51
+*  date:  2022-03-29 21:25:09
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
@@ -17,22 +17,26 @@ const apiPrefix = '/api/sys/permission'
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«List«PermissionTreeData»»",
+	*	"title":"通用响应体«List«PermissionTreeData»»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
+	*			"description":"数据体",
 	*			"type":"array",
 	*			"items":{
 	*				"ref":"#/definitions/PermissionTreeData"
 	*			}
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -80,7 +84,8 @@ const getTree = (body, params) => {
 	*		"parentIds":{
 	*			"type":"array",
 	*			"items":{
-	*				"type":"string"
+	*				"format":"int64",
+	*				"type":"integer"
 	*			}
 	*		},
 	*		"orderNum":{
@@ -141,17 +146,20 @@ const getTree = (body, params) => {
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«Permission对象»",
+	*	"title":"通用响应体«Permission对象»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
 	*			"ref":"#/definitions/Permission对象",
+	*			"description":"数据体",
 	*			"value":{
 	*				"type":"object",
 	*				"title":"Permission对象",
@@ -172,7 +180,8 @@ const getTree = (body, params) => {
 	*					"parentIds":{
 	*						"type":"array",
 	*						"items":{
-	*							"type":"string"
+	*							"format":"int64",
+	*							"type":"integer"
 	*						}
 	*					},
 	*					"orderNum":{
@@ -231,6 +240,7 @@ const getTree = (body, params) => {
 	*			}
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{
@@ -265,7 +275,8 @@ const save = (body, params) => {
 	*		"ids":{
 	*			"type":"array",
 	*			"items":{
-	*				"type":"string"
+	*				"format":"int64",
+	*				"type":"integer"
 	*			}
 	*		}
 	*	}
@@ -274,19 +285,23 @@ const save = (body, params) => {
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«string»",
+	*	"title":"通用响应体«string»",
 	*	"properties":{
 	*		"msg":{
+	*			"description":"正常消息",
 	*			"type":"string"
 	*		},
 	*		"code":{
 	*			"format":"int32",
+	*			"description":"公共响应码",
 	*			"type":"integer"
 	*		},
 	*		"data":{
+	*			"description":"数据体",
 	*			"type":"string"
 	*		},
 	*		"errmsg":{
+	*			"description":"错误消息",
 	*			"type":"string"
 	*		},
 	*		"bcode":{

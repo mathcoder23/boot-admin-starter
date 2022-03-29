@@ -1,7 +1,7 @@
 /**
 *  note: 该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-18 10:00:51
+*  date:  2022-03-29 21:25:09
 *  mbg-author: Petty Fox
 *  description: 统一生成Api调用聚合
 *  template-version: v1.0.0
@@ -11,8 +11,9 @@ import { RoleApi } from './api/sys/RoleApi'
 import { WebsocketApi } from './api/message/WebsocketApi'
 import { SystemLogApi } from './api/sys/SystemLogApi'
 import { ConstantApi } from './api/ConstantApi'
-import { AccountApi } from './api/sys/AccountApi'
+import { DepartmentApi } from './api/sys/DepartmentApi'
 import { PermissionApi } from './api/sys/PermissionApi'
+import { AccountApi } from './api/sys/AccountApi'
 import { RolePermissionApi } from './api/account/RolePermissionApi'
 
 export default {
@@ -21,7 +22,8 @@ export default {
     WebsocketApi,
     SystemLogApi,
     ConstantApi,
-    AccountApi,
+    DepartmentApi,
     PermissionApi,
+    AccountApi,
     RolePermissionApi
 }

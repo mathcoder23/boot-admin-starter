@@ -39,9 +39,9 @@ export default {
       this.index.openMenu(item)
     },
     getMenu () {
-      this.$store.dispatch("GetTopMenu").then(res => {
-        this.items = res;
-      });
+      // this.$store.dispatch("GetTopMenu").then(res => {
+        //   this.items = res;
+        // });
     },
     generateTitle (item) {
       return this.$router.$avueRouter.generateTitle(

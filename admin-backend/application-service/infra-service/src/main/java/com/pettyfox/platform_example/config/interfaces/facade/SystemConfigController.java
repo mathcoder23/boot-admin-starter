@@ -11,10 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import org.pettyfox.base.comm.log.ApiLog;
 import org.pettyfox.base.comm.log.ApiLogType;
 import org.pettyfox.base.comm.web.RestObjectResponse;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -29,13 +26,13 @@ public class SystemConfigController extends BaseController {
     private ConfigSystemBiz configSystemBiz;
 
     @ApiOperation("获取所有系统配置")
-    @PostMapping("/systemConfig/getAllConfig")
+    @GetMapping("/systemConfig/getAllConfig")
     public RestObjectResponse<List<SystemConfigGroupVO>> getAllConfig() {
         return RestObjectResponse.ok(configSystemGroupBiz.getAllConfig());
     }
 
     @ApiOperation("获取配置")
-    @PostMapping("/systemConfig/getConfigByKey")
+    @GetMapping("/systemConfig/getConfigByKey")
     public RestObjectResponse<SystemConfig> getConfigByKey(@RequestParam String key) {
         return RestObjectResponse.ok(configSystemBiz.getByConfigKey(key));
     }
