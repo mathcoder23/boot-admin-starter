@@ -37,9 +37,6 @@ module.exports = {
         entry
             .add('classlist-polyfill')
             .end()
-        entry
-            .add('@/mock')
-            .end()
     },
     pages: {
         index: {

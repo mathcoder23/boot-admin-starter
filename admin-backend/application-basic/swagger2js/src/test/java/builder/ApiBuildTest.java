@@ -16,7 +16,7 @@ public class ApiBuildTest {
     String api = "(/api/(?!commApi).*)";
 
     // 生成的前端路径，注意自行修改
-    private static final String BUILD_DIR = "/Users/i303/Documents/worklab-open/boot-admin-starter/admin-web/src/application/api/genApi";
+    private static final String BUILD_DIR = "/Users/i303/Documents/worklab-open/boot-admin-starter/admin-web/src/api/genApi";
 
     /**
      * swagger转js接口文件

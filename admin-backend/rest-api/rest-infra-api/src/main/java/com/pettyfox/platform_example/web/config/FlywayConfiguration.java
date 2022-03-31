@@ -1,6 +1,7 @@
 package com.pettyfox.platform_example.web.config;
 
 import com.baomidou.dynamic.datasource.provider.DynamicDataSourceProvider;
+import com.pettyfox.platform_example.account.domain.po.Account;
 import com.pettyfox.platform_example.account.infrastructure.config.AccountAggregateConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.flywaydb.core.Flyway;
@@ -46,7 +47,7 @@ public class FlywayConfiguration {
 
         // 区分先后顺序，表结构与数据的初始化分开执行
         List<String> dbs = Arrays.asList(AccountAggregateConfig.FLYWAY_DB_SQL
-                , AccountAggregateConfig.FLYWAY_DB_SQL_DATA
+                , AccountAggregateConfig.FLYWAY_DB_SQL_DATA, AccountAggregateConfig.FLYWAY_DB_MENU_DATA
         );
 
         for (String db : dbs) {
