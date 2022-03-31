@@ -1,0 +1,3 @@
+[submodule "admin-web/src/framework"]
+	path = admin-web/src/framework
+	url = git@github.com:mathcoder23/boot-admin-starter-web-framework.git
