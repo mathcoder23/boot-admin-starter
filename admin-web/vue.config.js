@@ -1,5 +1,8 @@
 let webVersion = "1.0.13"
-
+const path = require("path");
+function resolve(dir) {
+    return path.join(__dirname, dir);
+}
 let baseUrl = './'
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = {
@@ -37,6 +40,10 @@ module.exports = {
         entry
             .add('classlist-polyfill')
             .end()
+
+        config.resolve.alias
+            .set("@", resolve("src"))
+            .set("@_framework", resolve("framework"))
     },
     pages: {
         index: {

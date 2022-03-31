@@ -4,7 +4,7 @@
 *  date:  ${genDate}
 *  mbg-author: ${author}
 */
-import {PFApi} from '@/framework/api/core/core'
+import {PFApi} from '@_framework/api/core/core'
 const apiPrefix = '${cGenApi.uriPrefix}'
 <#list cGenApi.cmdList as item>
 /**
