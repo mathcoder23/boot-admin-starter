@@ -4,11 +4,11 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * <p>Copyright: Copyright (c) 2021</p>
- * <p>Description: Created by eface .FW on 2021/10/13</p>
+ * <p>Description: Created by Petty Fox on 2021/10/13</p>
  * <p></p>
  * 文本安全隐藏工具
  *
- * @author eface .FW
+ * @author Petty Fox
  */
 public class SecretTextUtil {
     public static String phone(String phone) {

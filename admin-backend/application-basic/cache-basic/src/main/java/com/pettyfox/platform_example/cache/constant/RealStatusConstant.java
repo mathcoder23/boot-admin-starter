@@ -2,11 +2,11 @@ package com.pettyfox.platform_example.cache.constant;
 
 /**
  * <p>Copyright: Copyright (c) 2021</p>
- * <p>Description: Created by eface .FW on 2021/10/12</p>
+ * <p>Description: Created by Petty Fox on 2021/10/12</p>
  * <p></p>
  * 实时状态常量
  *
- * @author eface .FW
+ * @author Petty Fox
  */
 public class RealStatusConstant {
 

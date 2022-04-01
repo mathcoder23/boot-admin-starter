@@ -5,10 +5,10 @@ import io.netty.buffer.Unpooled;
 
 /**
  * <p>Copyright: Copyright (c) 2021</p>
- * <p>Description: Created by eface .FW on 2021/9/10</p>
+ * <p>Description: Created by Petty Fox on 2021/9/10</p>
  * <p>二进制消息 协议包装</p>
  *
- * @author eface .FW
+ * @author Petty Fox
  */
 public class MessageBinaryWrapper {
 

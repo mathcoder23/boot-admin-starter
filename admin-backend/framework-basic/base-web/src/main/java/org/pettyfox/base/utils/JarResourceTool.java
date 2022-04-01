@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * <p>Copyright: Copyright (c) 2021</p>
- * <p>Description: Created by eface .FW on 2021/10/19</p>
+ * <p>Description: Created by Petty Fox on 2021/10/19</p>
  * <p></p>
  * 将jar包内的resource文件转换到本地文件存储
  * 之所以需要如此是因为java的resource只能以stream的方式读取，但是某些场景我们只能使用file文件

@@ -6,10 +6,10 @@ import java.util.Map;
 
 /**
  * <p>Copyright: Copyright (c) 2021</p>
- * <p>Description: Created by eface .FW on 2021/9/23</p>
+ * <p>Description: Created by Petty Fox on 2021/9/23</p>
  * <p></p>
  *
- * @author eface .FW
+ * @author Petty Fox
  */
 public interface MessageSubscribeService {
 

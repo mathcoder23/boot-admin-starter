@@ -1,7 +1,7 @@
 package org.pettyfox.base.event.aop;
 
 /**
- * @author eface .FW
+ * @author Petty Fox
  * @version 1.0
  * @date 2021/8/6 17:13
  */
