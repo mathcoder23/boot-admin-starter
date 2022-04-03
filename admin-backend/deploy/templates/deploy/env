@@ -1,0 +1,3 @@
+export DOCKER_STACK_NAME=boot-admin-starter
+
+export DOCKER_IMAGE_NAME=boot-admin-starter
