@@ -1,7 +1,0 @@
-[submodule "admin-web/framework"]
-	path = admin-web/framework
-	url = git@github.com:mathcoder23/boot-admin-starter-web-framework.git
-[submodule "admin-backend/application-service/infra-service"]
-	path = admin-backend/application-service/infra-service
-	url = git@github.com:mathcoder23/boot-admin-start-backend-framework.git
-	branch = main_infra_service

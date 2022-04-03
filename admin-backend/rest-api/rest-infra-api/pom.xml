@@ -15,7 +15,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <docker.dir>../../../deploy/build/gateway-service</docker.dir><!-- docker打包路径 -->
+        <docker.dir>../../deploy/build/rest-infra-api</docker.dir><!-- docker打包路径 -->
     </properties>
     <dependencies>
         <dependency>
