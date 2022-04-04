@@ -8,7 +8,7 @@ services:
     volumes:
       - ./nginx/config/conf.d:/etc/nginx/conf.d
       - ./nginx/config/certs:/etc/nginx/certs
-      - ./nginxta/data/logs:/var/log/nginx
+      - ./nginxt/data/logs:/var/log/nginx
       - ./nginx/data/html:/home/www
     ports:
       - "${EXPOSE_PORT_NGINX}:80"
