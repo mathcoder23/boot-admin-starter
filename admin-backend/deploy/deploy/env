@@ -1,4 +1,6 @@
 export DOCKER_STACK_NAME=boot-admin-starter
 
 export DOCKER_IMAGE_NAME=boot-admin-starter
-export IMAGE_VERSION=rest-infra-api_1.0.0
+export EXPOSE_PORT_REST_INFRA_API=10001
+export EXPOSE_PORT_NGINX=80
+export EXPOSE_PORT_NGINX_HTTPS=443
