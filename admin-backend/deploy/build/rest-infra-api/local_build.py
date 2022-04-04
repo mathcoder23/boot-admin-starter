@@ -23,7 +23,7 @@ def main():
     print('docker image tag:', tag)
 
     print('starting build docker image')
-    os.system('docker build -t %s' % tag)
+    os.system('docker build -t %s .' % tag)
     print('finished docker image:', tag)
 
 
