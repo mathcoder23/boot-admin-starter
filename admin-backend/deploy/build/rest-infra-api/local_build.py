@@ -19,7 +19,7 @@ def buildImageTag():
 
 def main():
     version = buildImageTag()
-    tag = _docker_image_name + version
+    tag = _docker_image_name + ":" + version
     print('docker image tag:', tag)
 
     print('starting build docker image')

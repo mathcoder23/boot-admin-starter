@@ -28,4 +28,4 @@ target/
 .mvn
 
 runner/
-/deploy/build-basic/
+*.jar
