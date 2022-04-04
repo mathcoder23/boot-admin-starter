@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   rest_infra_api:
-    image: ${DOCKER_IMAGE_NAME}:{IMAGE_VERSION}
+    image: ${DOCKER_IMAGE_NAME}:${IMAGE_VERSION}
     restart: always
     logging:
       driver: "json-file"
