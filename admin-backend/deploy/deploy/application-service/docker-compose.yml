@@ -9,4 +9,5 @@ services:
       options:
         max-size: "5g"
     environment:
+      - TZ=Asia/Shanghai
       - spring.profiles.active=docker
