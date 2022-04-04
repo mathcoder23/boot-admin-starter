@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  rest_infra_api:
+    image: ${DOCKER_IMAGE_NAME}:{IMAGE_VERSION}
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5g"
+    environment:
+      - spring.profiles.active=docker
