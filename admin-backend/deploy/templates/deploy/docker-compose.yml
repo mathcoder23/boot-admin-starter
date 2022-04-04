@@ -6,10 +6,10 @@ services:
     environment:
       - TZ=Asia/Shanghai
     volumes:
-      - ./nginx-data/config/conf.d:/etc/nginx/conf.d
-      - ./nginx-data/config/certs:/etc/nginx/certs
-      - ./nginx-data/data/logs:/var/log/nginx
-      - ./nginx-data/data/html:/home/www
+      - ./nginx/config/conf.d:/etc/nginx/conf.d
+      - ./nginx/config/certs:/etc/nginx/certs
+      - ./nginx/data/logs:/var/log/nginx
+      - ./nginx/data/html:/home/www
     ports:
       - "${EXPOSE_PORT_NGINX}:80"
       - "${EXPOSE_PORT_NGINX_HTTPS}:443"
