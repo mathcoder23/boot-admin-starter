@@ -16,7 +16,7 @@ services:
     depends_on:
       - rest_infra_api
   rest_infra_api:
-    image: boot-admin-starter:rest-infra-api-1.0.0
+    image: ${DOCKER_IMAGE_NAME}:${IMAGE_VERSION}
     restart: always
     logging:
       driver: "json-file"
