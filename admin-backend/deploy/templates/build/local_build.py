@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import configparser
 import os
 
@@ -19,11 +19,11 @@ def buildImageTag():
 
 def main():
     version = buildImageTag()
-    tag = _docker_image_name + version
+    tag = _docker_image_name + ":" + version
     print('docker image tag:', tag)
 
     print('starting build docker image')
-    os.system('docker build -t %s' % tag)
+    os.system('docker build -t %s .' % tag)
     print('finished docker image:', tag)
 
 
